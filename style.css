@@ -1,0 +1,308 @@
+/*------------------PRINCIPAL--------------*/
+#conteudo-principal {
+    width: 100%;
+    height: 100vh;
+    background: url(imagens/background1.jpg) center center no-repeat fixed;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.display-4 {
+    color: white;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+    margin-top: 100px;
+}
+
+#duas-colunas {
+    height: 100vh;
+    opacity: 0.8;
+    text-align: justify;
+    background: url(imagens/Ladybugs.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+}
+
+.caixa-paragrafo {
+    background: url(imagens/bg-paragrafos.jpg) center center;
+    background-size: cover;
+    opacity: 0.5;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid rgba(0, 0, 0, 0.493) 2px;
+    margin: auto;
+}
+
+/*------------------GALERIA--------------*/
+#galeria {
+    background: url(imagens/bg-paragrafos.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.8;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#galeria > a {
+    margin: 5px auto;
+    width: 150px;
+    height: 150px;
+    padding-top: 13px;
+    padding-right: 6px;
+    background: url(imagens/fundo-foto.png) no-repeat;
+    background-size: contain;
+}
+
+/*------------------ANIMAÇÃO--------------*/
+/* Cada wrapper posiciona a joaninha; usaremos transição para o movimento horizontal */
+.wrapper {
+    position: absolute;
+    transition: transform 5s linear;
+}
+
+/* Os wrappers da esquerda começam à esquerda */
+.wrapper.esquerda {
+    left: 0;
+}
+
+/* Os wrappers da direita começam à direita */
+.wrapper.direita {
+    right: 0;
+}
+
+/* Estilo da joaninha (imagem) */
+.joaninha {
+    width: 30px;
+    height: 30px;
+    background: url('imagens/joaninha.png') no-repeat center/cover;
+}
+
+/* Animação do pulo (vertical) */
+.bounce {
+    animation: jump 1s infinite;
+}
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}
+
+body {
+    background-color: #eef;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 150vh;
+}
+/*--------------------ANIMAÇÃO CORAÇÃO*/
+.hearts-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .heart {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    clip-path: polygon(50% 0%, 100% 30%, 80% 100%, 50% 80%, 20% 100%, 0% 30%);
+    animation: floatUp 4s linear infinite;
+    opacity: 0;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+
+/*------------------MÍDIAS QUERIES - RESPONSIVIDADE--------------*/
+
+/* Para telas médias (até 768px) */
+@media (max-width: 768px) {
+    #conteudo-principal {
+        height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+        padding: 20px;
+    }
+    
+    #duas-colunas {
+        height: 100vh;
+        padding: 20px;
+    }
+    
+    .caixa-paragrafo {
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    #galeria {
+        height: 100vh;
+        padding: 20px;
+        flex-direction: row;
+    }
+    
+    #galeria > a {
+        width: 120px;
+        height: 120px;
+        margin: 5px;
+    }
+    /*--------------------SOBRE NOS*/
+    #container-galeria {
+        background-color: #666669c7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #secao-fotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 520px;
+    }
+    
+    .caixa-fotos {
+        border-radius: 7px;
+        width: 250px;
+        height: 300px;
+        background-color: #29293E;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & video {
+            border-radius: 50%;
+            width: 200px;
+        }
+    }
+    
+    
+    
+}
+/* Para telas pequenas (até 576px) */
+@media (max-width: 576px) {
+    #conteudo-principal{
+        height: 100vh;
+    }
+    .display-4 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+    #galeria{
+        height: 100vh;
+    }
+    #galeria > a {
+        width: 120px;
+        height: 120px;
+        margin: 5px;
+    }
+    .caixa-paragrafo {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    /*--------------------SOBRE NOS*/
+    #container-galeria {
+        background-color: #666669c7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #secao-fotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 520px;
+    }
+    
+    .caixa-fotos {
+        border-radius: 7px;
+        width: 250px;
+        height: 300px;
+        background-color: #29293E;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & video {
+            border-radius: 50%;
+            width: 200px;
+        }
+    }
+    
+    
+    
+}
+/*--------------------GALERIA*/
+#container-galeria {
+    background-color: #666669c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#secao-fotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 520px;
+}
+
+.caixa-fotos {
+    border-radius: 7px;
+    width: 250px;
+    height: 300px;
+    background-color: #29293E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    & h4 {
+        position: absolute;
+        top: 0px;
+    }
+    & video {
+        border-radius: 50%;
+        width: 200px;
+    }
+}
+
+
+/*--------------------SOBRE NOS*/
+#caixa-paragrafo{
+    padding: 0px 20px;
+    & img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    & video {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
